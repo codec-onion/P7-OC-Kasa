@@ -1,8 +1,24 @@
+import { housing } from '../../utils/housing'
+import { Link } from 'react-router-dom'
+import CardHousing from '../../components/CardHousing'
+import Banner from '../../components/Banner'
+
 function Home() {
   return (
-    <div>
-      <div className="home__title">
+    <div className="home">
+      <Banner className="banner--home">
         <h1>Chez vous, partout et ailleurs</h1>
+      </Banner>
+      <div className="home__housing">
+        {housing.map((housing) => (
+          <CardHousing
+            className="housing-card"
+            id={housing.id}
+            cover={housing.cover}
+            title={housing.title}
+            key={`${housing.id}`}
+          />
+        ))}
       </div>
     </div>
   )

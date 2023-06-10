@@ -1,0 +1,17 @@
+.housing-card {
+  display: flex;
+  align-items: flex-end;
+  width: 340px;
+  height: 340px;
+  margin: 0 2% 50px 2%;
+  border-radius: 10px;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  p {
+    color: $text-color;
+    font-size: 18px;
+    margin: 20px;
+    line-height: 140%;
+  }
+}

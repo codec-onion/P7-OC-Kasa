@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 100px 0 100px;
+  .header-link {
+    font-size: 24px;
+    color: $primary-color;
+    text-decoration: none;
+    &.active {
+      text-decoration: underline;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+    &:first-child {
+      margin-right: 50px;
+    }
+  }
+}

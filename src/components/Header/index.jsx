@@ -1,23 +1,35 @@
 import { Link } from 'react-router-dom'
-import K from '../../assets/logo/k.png'
-import House from '../../assets/logo/house.png'
-import S from '../../assets/logo/s.png'
-import A from '../../assets/logo/a.png'
-import '../../index.css'
+import Logo from '../../assets/LOGO.png'
+import { useLocation } from 'react-router-dom'
 
 function Header() {
+  const location = useLocation()
+
   return (
     <header>
       <div>
-        <img src={K} alt="le k du logo" />
-        <img src={House} alt="la maison du logo" />
-        <img src={S} alt="le s du logo" />
-        <img src={A} alt="le dernier du logo" />
+        <img src={Logo} alt="logo de kasa" />
       </div>
-      <div>
-        <Link to="/">Accueil</Link>
-        <Link to="/About">À propos</Link>
-      </div>
+      <nav>
+        <Link
+          to="/"
+          className={
+            location.pathname === '/' ? 'header-link active' : 'header-link'
+          }
+        >
+          Accueil
+        </Link>
+        <Link
+          to="/about"
+          className={
+            location.pathname === '/about'
+              ? 'header-link active'
+              : 'header-link'
+          }
+        >
+          À propos
+        </Link>
+      </nav>
     </header>
   )
 }
