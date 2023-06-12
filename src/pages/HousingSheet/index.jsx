@@ -1,11 +1,12 @@
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
+import Slideshow from '../../components/Slideshow'
 
 function HousingSheet() {
-  const { idHousing } = useParams()
+  // const { idHousing } = useParams()
 
   return (
-    <div>
-      <p>Ceci est la page du logement ayant pour id: {idHousing}</p>
+    <div className="housing-sheet">
+      <Slideshow />
     </div>
   )
 }

@@ -95,7 +95,11 @@ code {
   margin: 30px 30px 20px 20px;
 }
 .collapse--about-content.open {
-  max-height: 500px;
+  max-height: 300px;
+}
+
+.slideshow {
+  height: 415px;
 }
 
 header {
@@ -141,6 +145,10 @@ footer img {
   flex-wrap: wrap;
   margin-top: 40px;
   border-radius: 25px;
+}
+
+.housing-sheet {
+  margin: 25px 100px 50px 100px;
 }
 
 .about {

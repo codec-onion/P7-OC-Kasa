@@ -1,5 +1,4 @@
 import { housing } from '../../utils/housing'
-import { Link } from 'react-router-dom'
 import CardHousing from '../../components/CardHousing'
 import Banner from '../../components/Banner'
 
