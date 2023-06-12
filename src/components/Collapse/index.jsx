@@ -9,6 +9,10 @@ function Collapse(props) {
     openedCollapse ? setOpenedCollapse(false) : setOpenedCollapse(true)
   }
 
+  const animHeightCollapse = openedCollapse
+    ? `${props.contentClassName} open`
+    : `${props.contentClassName}`
+
   return (
     <div className={props.globalClassName}>
       <div className={props.titleClassName} onClick={toggleCollapse}>
@@ -19,11 +23,9 @@ function Collapse(props) {
           <img src={DownChevron} alt="Chevron vers le bas" />
         )}
       </div>
-      {openedCollapse ? (
-        <p className={props.contentClassName}>{props.content}</p>
-      ) : (
-        ''
-      )}
+      <div className={animHeightCollapse}>
+        <p>{props.content}</p>
+      </div>
     </div>
   )
 }

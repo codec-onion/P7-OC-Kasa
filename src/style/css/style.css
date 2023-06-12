@@ -85,21 +85,19 @@ code {
   font-weight: 400;
   background-color: #f7f7f7;
   border-radius: 5px;
-  padding: 30px 30px 20px 20px;
-  color: #ff6060;
   overflow: hidden;
+  color: #ff6060;
+  max-height: 0;
   transform-origin: top;
-  animation: 300ms ease-in-out collapse-anim;
+  transition: max-height 300ms ease-in-out;
+}
+.collapse--about-content p {
+  margin: 30px 30px 20px 20px;
+}
+.collapse--about-content.open {
+  max-height: 500px;
 }
 
-@keyframes collapse-anim {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
 header {
   display: flex;
   justify-content: space-between;
@@ -146,7 +144,7 @@ footer img {
 }
 
 .about {
-  margin: 30px 100px 30px 100px;
+  margin: 60px 100px 100px 100px;
 }
 
 .error-page {

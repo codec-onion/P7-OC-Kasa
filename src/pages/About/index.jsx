@@ -28,8 +28,9 @@ function About() {
   return (
     <div className="about">
       <Banner className="banner--about" />
-      {aboutData.map((data) => (
+      {aboutData.map((data, index) => (
         <Collapse
+          key={`${data.title}-${index}`}
           title={data.title}
           content={data.content}
           globalClassName="collapse--about"

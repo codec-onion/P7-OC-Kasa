@@ -21,20 +21,17 @@
       font-weight: 400;
       background-color: map-get($map: $background-color, $key: block);
       border-radius: 5px;
-      padding: 30px 30px 20px 20px;
-      color: $primary-color;
       overflow: hidden;
+      color: $primary-color;
+      max-height: 0;
       transform-origin: top;
-      animation: 300ms ease-in-out collapse-anim;
+      transition: max-height 300ms ease-in-out;
+      p {
+        margin: 30px 30px 20px 20px;
+      }
+      &.open {
+        max-height: 500px;
+      }
     }
-  }
-}
-
-@keyframes collapse-anim {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
   }
 }
