@@ -100,6 +100,14 @@ code {
 
 .slideshow {
   height: 415px;
+  border: 1px solid black;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.slideshow img {
+  height: 415px;
+  width: 1240px;
+  object-position: 50% 50%;
 }
 
 header {
