@@ -13,6 +13,10 @@ function Collapse(props) {
     ? `${props.contentClassName} open`
     : `${props.contentClassName}`
 
+  // useEffect(() => {
+  //   console.log(document.querySelector(`#${props.id}`))
+  // }, [])
+
   return (
     <div className={props.globalClassName}>
       <div className={props.titleClassName} onClick={toggleCollapse}>
@@ -23,7 +27,7 @@ function Collapse(props) {
           <img src={DownChevron} alt="Chevron vers le bas" />
         )}
       </div>
-      <div className={animHeightCollapse}>
+      <div className={animHeightCollapse} id={props.id}>
         <p>{props.content}</p>
       </div>
     </div>

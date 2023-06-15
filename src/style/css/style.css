@@ -47,8 +47,8 @@ code {
 .housing-card {
   display: flex;
   align-items: flex-end;
-  width: 340px;
-  height: 340px;
+  width: 300px;
+  height: 300px;
   margin: 0 2% 50px 2%;
   border-radius: 10px;
   text-decoration: none;
@@ -100,14 +100,45 @@ code {
 
 .slideshow {
   height: 415px;
-  border: 1px solid black;
   overflow: hidden;
   border-radius: 25px;
+  display: flex;
+  position: relative;
 }
 .slideshow img {
-  height: 415px;
-  width: 1240px;
-  object-position: 50% 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 400ms ease-in-out;
+}
+.slideshow__counter {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px 2px black;
+  transform: translateX(-50%);
+}
+.slideshow__left-arrow {
+  width: 46px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.slideshow__right-arrow {
+  width: 46px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 header {
@@ -157,6 +188,32 @@ footer img {
 
 .housing-sheet {
   margin: 25px 100px 50px 100px;
+  color: #ff6060;
+}
+.housing-sheet__info {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.housing-sheet__info__title {
+  width: 50%;
+}
+.housing-sheet__info__host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.housing-sheet__info__host p img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.housing-sheet__info__host div {
+  margin-top: 30px;
+}
+.housing-sheet__info__host div img {
+  margin-left: 15px;
 }
 
 .about {
