@@ -34,9 +34,7 @@ function About() {
           id={`collapse-${index}`}
           title={data.title}
           content={data.content}
-          globalClassName="collapse--about"
-          titleClassName="collapse--about-title"
-          contentClassName="collapse--about-content"
+          globalClassName="collapse collapse--about"
         />
       ))}
     </div>

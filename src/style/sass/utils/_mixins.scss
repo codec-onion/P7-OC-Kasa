@@ -5,22 +5,3 @@
   border-radius: 25px;
   display: flex;
 }
-
-@mixin collapse-title {
-  font-weight: 500;
-  background-color: $primary-color;
-  border-radius: 5px;
-  position: relative;
-  z-index: 1;
-  top: 10px;
-  color: $text-color;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px 0 20px;
-  cursor: pointer;
-}
-
-@mixin collapse-content {
-}

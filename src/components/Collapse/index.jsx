@@ -1,25 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import UpChevron from '../../assets/upchevron.png'
 import DownChevron from '../../assets/downchevron.png'
 
 function Collapse(props) {
   const [openedCollapse, setOpenedCollapse] = useState(false)
+  const [collapseHeight, setCollapseHeight] = useState(0)
 
   function toggleCollapse() {
     openedCollapse ? setOpenedCollapse(false) : setOpenedCollapse(true)
   }
 
   const animHeightCollapse = openedCollapse
-    ? `${props.contentClassName} open`
-    : `${props.contentClassName}`
+    ? 'collapse__content open'
+    : 'collapse__content'
 
-  // useEffect(() => {
-  //   console.log(document.querySelector(`#${props.id}`))
-  // }, [])
+  useEffect(() => {
+    console.log(document.querySelector(`#${props.id}`).scrollHeight)
+    // const currentCollapse = document.querySelector(`#${props.id}`)
+    // const currentCollapseHeight = currentCollapse.scrollHeight
+    // console.log(currentCollapseHeight)
+  }, [])
 
   return (
     <div className={props.globalClassName}>
-      <div className={props.titleClassName} onClick={toggleCollapse}>
+      <div className="collapse__title" onClick={toggleCollapse}>
         {props.title}
         {openedCollapse ? (
           <img src={UpChevron} alt="Chevron vers le haut" />
@@ -27,14 +31,11 @@ function Collapse(props) {
           <img src={DownChevron} alt="Chevron vers le bas" />
         )}
       </div>
-      <div
-        className={animHeightCollapse}
-        // id={props.id}
-      >
+      <div className={animHeightCollapse} id={props.id}>
         {Array.isArray(props.content) ? (
           <ul>
-            {props.content.map((element) => (
-              <li>{element}</li>
+            {props.content.map((element, index) => (
+              <li key={`${element}-${index}`}>{element}</li>
             ))}
           </ul>
         ) : (

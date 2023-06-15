@@ -3,6 +3,7 @@ import { housing } from '../../utils/housing'
 import Slideshow from '../../components/Slideshow'
 import HousingInfo from '../../components/HousingInfo'
 import HostProfile from '../../components/HostProfile'
+import Collapse from '../../components/Collapse'
 import Error from '../Error'
 
 function HousingSheet() {
@@ -28,7 +29,20 @@ function HousingSheet() {
           hostRating={currentHousing.rating}
         />
       </div>
-      <div className="housing-sheet__details"></div>
+      <div className="housing-sheet__details">
+        <Collapse
+          title="Description"
+          content={currentHousing.description}
+          globalClassName="collapse collapse--housing-sheet"
+          id={`collapse-0`}
+        />
+        <Collapse
+          title="Équipements"
+          content={currentHousing.equipments}
+          globalClassName="collapse collapse--housing-sheet"
+          id={`collapse-1`}
+        />
+      </div>
     </div>
   )
 }
