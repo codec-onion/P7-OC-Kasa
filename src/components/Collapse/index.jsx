@@ -27,8 +27,19 @@ function Collapse(props) {
           <img src={DownChevron} alt="Chevron vers le bas" />
         )}
       </div>
-      <div className={animHeightCollapse} id={props.id}>
-        <p>{props.content}</p>
+      <div
+        className={animHeightCollapse}
+        // id={props.id}
+      >
+        {Array.isArray(props.content) ? (
+          <ul>
+            {props.content.map((element) => (
+              <li>{element}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{props.content}</p>
+        )}
       </div>
     </div>
   )

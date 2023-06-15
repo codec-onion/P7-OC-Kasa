@@ -8,22 +8,5 @@
     &__title {
       width: 50%;
     }
-    &__host {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      p img {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        vertical-align: middle;
-      }
-      div {
-        margin-top: 30px;
-        img {
-          margin-left: 15px;
-        }
-      }
-    }
   }
 }

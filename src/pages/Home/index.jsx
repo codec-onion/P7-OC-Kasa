@@ -1,8 +1,16 @@
 import { housing } from '../../utils/housing'
 import CardHousing from '../../components/CardHousing'
 import Banner from '../../components/Banner'
+// import { useState } from 'react'
 
 function Home() {
+  // const [housingData, setHousingData] = useState([])
+
+  // fetch('')
+  //   .then((response) => console.log(response.json()))
+  //   .then((housingDataFetch) => console.log(housingDataFetch))
+  //   .catch((error) => error)
+
   return (
     <div className="home">
       <Banner className="banner--home">
