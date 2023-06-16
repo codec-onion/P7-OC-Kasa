@@ -4,7 +4,6 @@ import DownChevron from '../../assets/downchevron.png'
 
 function Collapse(props) {
   const [openedCollapse, setOpenedCollapse] = useState(false)
-  // const [collapseHeight, setCollapseHeight] = useState(0)
 
   function toggleCollapse() {
     openedCollapse ? setOpenedCollapse(false) : setOpenedCollapse(true)
@@ -13,13 +12,6 @@ function Collapse(props) {
   const animHeightCollapse = openedCollapse
     ? 'collapse__content open'
     : 'collapse__content'
-
-  // useEffect(() => {
-  //   console.log(document.querySelector(`#${props.id}`).scrollHeight)
-  //   // const currentCollapse = document.querySelector(`#${props.id}`)
-  //   // const currentCollapseHeight = currentCollapse.scrollHeight
-  //   // console.log(currentCollapseHeight)
-  // }, [])
 
   return (
     <div className={props.globalClassName}>
@@ -31,7 +23,7 @@ function Collapse(props) {
           <img src={DownChevron} alt="Chevron vers le bas" />
         )}
       </div>
-      <div className={animHeightCollapse} id={props.id}>
+      <div className={animHeightCollapse}>
         {Array.isArray(props.content) ? (
           <ul>
             {props.content.map((element, index) => (

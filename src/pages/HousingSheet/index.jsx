@@ -34,13 +34,11 @@ function HousingSheet() {
           title="Description"
           content={currentHousing.description}
           globalClassName="collapse collapse--housing-sheet"
-          id={`collapse-0`}
         />
         <Collapse
           title="Équipements"
           content={currentHousing.equipments}
           globalClassName="collapse collapse--housing-sheet"
-          id={`collapse-1`}
         />
       </div>
     </div>

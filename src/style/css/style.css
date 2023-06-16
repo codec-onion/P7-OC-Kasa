@@ -127,34 +127,37 @@ code {
 .collapse__content.open {
   max-height: 320px;
 }
+.collapse.collapse--about {
+  margin: 30px auto;
+  width: 82%;
+  font-size: 24px;
+}
+.collapse.collapse--housing-sheet {
+  width: 48%;
+  font-size: 18px;
+}
 @media screen and (max-width: 1023px) {
   .collapse__content.open {
     max-height: 550px;
   }
 }
 @media screen and (max-width: 767px) {
+  .collapse__title {
+    height: 30px;
+  }
+  .collapse__title img {
+    width: 18px;
+    height: 10px;
+  }
   .collapse__content.open {
     max-height: 800px;
   }
-}
-.collapse.collapse--about {
-  margin: 30px auto;
-  width: 82%;
-  font-size: 24px;
-}
-@media screen and (max-width: 767px) {
-  .collapse.collapse--about {
-    width: 100%;
-  }
-}
-.collapse.collapse--housing-sheet {
-  width: 48%;
-  font-size: 18px;
-}
-@media screen and (max-width: 767px) {
   .collapse.collapse--housing-sheet {
-    width: 100%;
     margin-bottom: 20px;
+  }
+  .collapse.collapse--about, .collapse.collapse--housing-sheet {
+    width: 100%;
+    font-size: 16px;
   }
 }
 

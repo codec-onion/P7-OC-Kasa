@@ -35,28 +35,40 @@
     }
     &.open {
       max-height: 320px;
-      @include tablette-display {
-        max-height: 550px;
-      }
-      @include mobile-display {
-        max-height: 800px;
-      }
     }
   }
   &.collapse--about {
     margin: 30px auto;
     width: 82%;
     font-size: 24px;
-    @include mobile-display {
-      width: 100%;
-    }
   }
   &.collapse--housing-sheet {
     width: 48%;
     font-size: 18px;
-    @include mobile-display {
-      width: 100%;
+  }
+  @include tablette-display {
+    &__content.open {
+      max-height: 550px;
+    }
+  }
+  @include mobile-display {
+    &__title {
+      height: 30px;
+      img {
+        width: 18px;
+        height: 10px;
+      }
+    }
+    &__content.open {
+      max-height: 800px;
+    }
+    &.collapse--housing-sheet {
       margin-bottom: 20px;
+    }
+    &.collapse--about,
+    &.collapse--housing-sheet {
+      width: 100%;
+      font-size: 16px;
     }
   }
 }

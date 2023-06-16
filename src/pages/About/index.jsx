@@ -31,7 +31,6 @@ function About() {
       {aboutData.map((data, index) => (
         <Collapse
           key={`${data.title}-${index}`}
-          id={`collapse-${index}`}
           title={data.title}
           content={data.content}
           globalClassName="collapse collapse--about"
