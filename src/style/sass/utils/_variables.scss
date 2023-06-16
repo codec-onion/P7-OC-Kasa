@@ -5,3 +5,10 @@ $background-color: (
   block: #f7f7f7,
   footer: #000000,
 );
+
+$breakpoints: (
+  tablette: 1023px,
+  mobile: 767px,
+  small-mobile: 350px,
+  for-housing-card: 1284px,
+);

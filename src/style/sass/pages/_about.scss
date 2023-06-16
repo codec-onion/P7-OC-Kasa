@@ -1,3 +1,9 @@
 .about {
   margin: 60px 100px 100px 100px;
+  @include tablette-display {
+    margin: 60px 50px 100px 50px;
+  }
+  @include mobile-display {
+    margin: 20px;
+  }
 }

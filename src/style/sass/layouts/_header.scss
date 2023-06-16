@@ -2,11 +2,35 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 100px 0 100px;
+  margin: 40px 100px 0 100px;
+  @include tablette-display {
+    margin: 40px 50px 0 50px;
+  }
+  @include mobile-display {
+    margin: 20px 20px 0 20px;
+  }
+  img {
+    @include mobile-display {
+      width: 145px;
+      height: 47px;
+    }
+  }
+  nav {
+    @include small-mobile-display {
+      display: flex;
+      flex-direction: column;
+      a {
+        margin-bottom: 10px;
+      }
+    }
+  }
   .header-link {
     font-size: 24px;
     color: $primary-color;
     text-decoration: none;
+    @include mobile-display {
+      font-size: 18px;
+    }
     &.active {
       text-decoration: underline;
     }
@@ -15,6 +39,9 @@ header {
     }
     &:first-child {
       margin-right: 50px;
+      @include mobile-display {
+        margin-right: 10px;
+      }
     }
   }
 }

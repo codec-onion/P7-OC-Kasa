@@ -22,7 +22,7 @@
     color: $primary-color;
     max-height: 0;
     transform-origin: top;
-    transition: max-height 300ms ease-in-out;
+    transition: max-height 400ms ease-in-out;
     p,
     ul {
       margin: 30px 30px 20px 20px;
@@ -34,15 +34,29 @@
       }
     }
     &.open {
-      max-height: 350px;
+      max-height: 320px;
+      @include tablette-display {
+        max-height: 550px;
+      }
+      @include mobile-display {
+        max-height: 800px;
+      }
     }
   }
   &.collapse--about {
-    margin: 30px 100px 30px 100px;
+    margin: 30px auto;
+    width: 82%;
     font-size: 24px;
+    @include mobile-display {
+      width: 100%;
+    }
   }
   &.collapse--housing-sheet {
     width: 48%;
     font-size: 18px;
+    @include mobile-display {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 }

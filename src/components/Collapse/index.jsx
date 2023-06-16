@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import UpChevron from '../../assets/upchevron.png'
 import DownChevron from '../../assets/downchevron.png'
 
 function Collapse(props) {
   const [openedCollapse, setOpenedCollapse] = useState(false)
-  const [collapseHeight, setCollapseHeight] = useState(0)
+  // const [collapseHeight, setCollapseHeight] = useState(0)
 
   function toggleCollapse() {
     openedCollapse ? setOpenedCollapse(false) : setOpenedCollapse(true)
@@ -14,17 +14,17 @@ function Collapse(props) {
     ? 'collapse__content open'
     : 'collapse__content'
 
-  useEffect(() => {
-    console.log(document.querySelector(`#${props.id}`).scrollHeight)
-    // const currentCollapse = document.querySelector(`#${props.id}`)
-    // const currentCollapseHeight = currentCollapse.scrollHeight
-    // console.log(currentCollapseHeight)
-  }, [])
+  // useEffect(() => {
+  //   console.log(document.querySelector(`#${props.id}`).scrollHeight)
+  //   // const currentCollapse = document.querySelector(`#${props.id}`)
+  //   // const currentCollapseHeight = currentCollapse.scrollHeight
+  //   // console.log(currentCollapseHeight)
+  // }, [])
 
   return (
     <div className={props.globalClassName}>
       <div className="collapse__title" onClick={toggleCollapse}>
-        {props.title}
+        <p>{props.title}</p>
         {openedCollapse ? (
           <img src={UpChevron} alt="Chevron vers le haut" />
         ) : (

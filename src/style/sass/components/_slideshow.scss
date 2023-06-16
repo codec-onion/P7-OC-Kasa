@@ -39,4 +39,15 @@
     transform: translateY(-50%);
     cursor: pointer;
   }
+  @include mobile-display {
+    height: 255px;
+    &__counter {
+      display: none;
+    }
+    &__left-arrow,
+    &__right-arrow {
+      width: 14px;
+      height: 22px;
+    }
+  }
 }

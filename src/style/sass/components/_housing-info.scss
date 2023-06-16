@@ -17,9 +17,25 @@
     background-color: $primary-color;
     height: 25px;
     font-size: 14px;
+    font-weight: 500;
     color: $text-color;
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
+  }
+  @include mobile-display {
+    width: 100%;
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+    }
+    span {
+      font-size: 10px;
+      min-width: 84px;
+      height: 18px;
+      border-radius: 5px;
+    }
   }
 }

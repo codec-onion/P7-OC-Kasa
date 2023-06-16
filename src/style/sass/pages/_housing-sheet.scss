@@ -5,13 +5,20 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
-    &__title {
-      width: 50%;
-    }
   }
   &__details {
     display: flex;
     justify-content: space-between;
     margin: 30px 0;
+  }
+  @include tablette-display {
+    margin: 25px 50px 50px 50px;
+  }
+  @include mobile-display {
+    margin: 20px;
+    &__info,
+    &__details {
+      flex-direction: column;
+    }
   }
 }

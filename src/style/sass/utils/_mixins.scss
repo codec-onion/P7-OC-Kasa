@@ -5,3 +5,27 @@
   border-radius: 25px;
   display: flex;
 }
+
+@mixin tablette-display {
+  @media screen and (max-width: map-get($breakpoints, tablette)) {
+    @content;
+  }
+}
+
+@mixin mobile-display {
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+@mixin small-mobile-display {
+  @media screen and (max-width: map-get($breakpoints, small-mobile)) {
+    @content;
+  }
+}
+
+@mixin for-housing-card-display {
+  @media screen and (max-width: map-get($breakpoints, for-housing-card)) {
+    @content;
+  }
+}

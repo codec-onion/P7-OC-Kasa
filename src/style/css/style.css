@@ -12,7 +12,6 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-top: 40px;
 }
 
 code {
@@ -35,6 +34,15 @@ code {
   font-size: 48px;
   font-weight: 500;
 }
+@media screen and (max-width: 767px) {
+  .banner--home {
+    height: 111px;
+  }
+  .banner--home h1 {
+    font-size: 24px;
+    margin: 0 16px 0 16px;
+  }
+}
 .banner--about {
   height: 223px;
   background-position: center;
@@ -43,17 +51,37 @@ code {
   display: flex;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../../assets/kalen-emsley-Bkci_8qcdvQ-unsplash\ 2.jpg);
 }
+@media screen and (max-width: 767px) {
+  .banner--about {
+    font-size: 24px;
+  }
+}
 
 .housing-card {
   display: flex;
   align-items: flex-end;
-  width: 300px;
-  height: 300px;
-  margin: 0 2% 50px 2%;
+  width: 30.3%;
+  height: 340px;
+  margin: 0 3% 3% 0;
   border-radius: 10px;
   text-decoration: none;
   background-size: cover;
   background-position: center;
+}
+@media screen and (max-width: 1284px) {
+  .housing-card {
+    width: 47%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .housing-card {
+    width: 100%;
+    height: 255px;
+    margin: 0 0 20px 0;
+  }
+}
+.housing-card:last-child {
+  justify-self: flex-start;
 }
 .housing-card p {
   color: white;
@@ -61,7 +89,6 @@ code {
   margin: 20px;
   line-height: 140%;
 }
-
 .collapse__title {
   font-weight: 500;
   background-color: #ff6060;
@@ -85,7 +112,7 @@ code {
   color: #ff6060;
   max-height: 0;
   transform-origin: top;
-  transition: max-height 300ms ease-in-out;
+  transition: max-height 400ms ease-in-out;
 }
 .collapse__content p,
 .collapse__content ul {
@@ -98,15 +125,37 @@ code {
   margin-bottom: 5px;
 }
 .collapse__content.open {
-  max-height: 350px;
+  max-height: 320px;
+}
+@media screen and (max-width: 1023px) {
+  .collapse__content.open {
+    max-height: 550px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .collapse__content.open {
+    max-height: 800px;
+  }
 }
 .collapse.collapse--about {
-  margin: 30px 100px 30px 100px;
+  margin: 30px auto;
+  width: 82%;
   font-size: 24px;
+}
+@media screen and (max-width: 767px) {
+  .collapse.collapse--about {
+    width: 100%;
+  }
 }
 .collapse.collapse--housing-sheet {
   width: 48%;
   font-size: 18px;
+}
+@media screen and (max-width: 767px) {
+  .collapse.collapse--housing-sheet {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .slideshow {
@@ -151,6 +200,18 @@ code {
   transform: translateY(-50%);
   cursor: pointer;
 }
+@media screen and (max-width: 767px) {
+  .slideshow {
+    height: 255px;
+  }
+  .slideshow__counter {
+    display: none;
+  }
+  .slideshow__left-arrow, .slideshow__right-arrow {
+    width: 14px;
+    height: 22px;
+  }
+}
 
 .host-profile {
   display: flex;
@@ -161,6 +222,7 @@ code {
   display: flex;
   align-items: center;
   text-align: right;
+  font-weight: 500;
 }
 .host-profile p img {
   width: 64px;
@@ -173,6 +235,30 @@ code {
 }
 .host-profile div img {
   margin-left: 15px;
+}
+@media screen and (max-width: 767px) {
+  .host-profile {
+    flex-direction: row-reverse;
+    align-items: initial;
+    justify-content: space-between;
+  }
+  .host-profile p {
+    font-size: 14px;
+  }
+  .host-profile p img {
+    width: 32px;
+    height: 32px;
+  }
+  .host-profile div img {
+    width: 14px;
+    height: 14px;
+  }
+  .host-profile div img:first-child {
+    margin-left: 0;
+  }
+  .host-profile div img:not(:first-child) {
+    margin-left: 7px;
+  }
 }
 
 .housing-info {
@@ -195,22 +281,70 @@ code {
   background-color: #ff6060;
   height: 25px;
   font-size: 14px;
+  font-weight: 500;
   color: white;
   margin-right: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
+}
+@media screen and (max-width: 767px) {
+  .housing-info {
+    width: 100%;
+  }
+  .housing-info h1 {
+    font-size: 18px;
+  }
+  .housing-info p {
+    font-size: 14px;
+  }
+  .housing-info span {
+    font-size: 10px;
+    min-width: 84px;
+    height: 18px;
+    border-radius: 5px;
+  }
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 100px 0 100px;
+  margin: 40px 100px 0 100px;
+}
+@media screen and (max-width: 1023px) {
+  header {
+    margin: 40px 50px 0 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  header {
+    margin: 20px 20px 0 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  header img {
+    width: 145px;
+    height: 47px;
+  }
+}
+@media screen and (max-width: 350px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+  }
+  header nav a {
+    margin-bottom: 10px;
+  }
 }
 header .header-link {
   font-size: 24px;
   color: #ff6060;
   text-decoration: none;
+}
+@media screen and (max-width: 767px) {
+  header .header-link {
+    font-size: 18px;
+  }
 }
 header .header-link.active {
   text-decoration: underline;
@@ -221,6 +355,11 @@ header .header-link:hover {
 header .header-link:first-child {
   margin-right: 50px;
 }
+@media screen and (max-width: 767px) {
+  header .header-link:first-child {
+    margin-right: 10px;
+  }
+}
 
 footer {
   height: 210px;
@@ -228,22 +367,43 @@ footer {
   background-color: black;
   text-align: center;
   padding-top: 65px;
+  font-size: 24px;
 }
 footer img {
   margin-bottom: 28px;
+}
+@media screen and (max-width: 767px) {
+  footer {
+    font-size: 12px;
+  }
 }
 
 .home {
   margin: 60px 100px 50px 100px;
 }
+@media screen and (max-width: 1023px) {
+  .home {
+    margin: 60px 50px 50px 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .home {
+    margin: 20px;
+  }
+}
 .home__housing {
-  padding: 50px 2% 0 2%;
+  padding: 3% 0 0 3%;
   background-color: #f7f7f7;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   margin-top: 40px;
   border-radius: 25px;
+}
+@media screen and (max-width: 767px) {
+  .home__housing {
+    padding: 0;
+    background-color: transparent;
+  }
 }
 
 .housing-sheet {
@@ -255,17 +415,37 @@ footer img {
   display: flex;
   justify-content: space-between;
 }
-.housing-sheet__info__title {
-  width: 50%;
-}
 .housing-sheet__details {
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
 }
+@media screen and (max-width: 1023px) {
+  .housing-sheet {
+    margin: 25px 50px 50px 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .housing-sheet {
+    margin: 20px;
+  }
+  .housing-sheet__info, .housing-sheet__details {
+    flex-direction: column;
+  }
+}
 
 .about {
   margin: 60px 100px 100px 100px;
+}
+@media screen and (max-width: 1023px) {
+  .about {
+    margin: 60px 50px 100px 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about {
+    margin: 20px;
+  }
 }
 
 .error-page {
@@ -280,13 +460,29 @@ footer img {
   font-weight: 700;
 }
 .error-page h1 {
-  margin: 70px 0 180px 0;
+  margin: 70px 50px 180px 50px;
   font-size: 36px;
   font-weight: 500;
+  text-align: center;
 }
 .error-page a {
   color: #ff6060;
   font-size: 18px;
+}
+@media screen and (max-width: 767px) {
+  .error-page {
+    margin: 30px 0 30px 0;
+  }
+  .error-page p {
+    font-size: 96px;
+  }
+  .error-page h1 {
+    font-size: 18px;
+    margin: 11px 50px 130px 50px;
+  }
+  .error-page a {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
