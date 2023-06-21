@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-function CardHousing(props) {
+function HousingCard(props) {
   return (
     <Link
-      className={props.className}
+      className="housing-card"
       to={`/housingsheet/${props.id}`}
       style={{
         backgroundImage: `linear-gradient(
@@ -17,4 +17,4 @@ function CardHousing(props) {
   )
 }
 
-export default CardHousing
+export default HousingCard

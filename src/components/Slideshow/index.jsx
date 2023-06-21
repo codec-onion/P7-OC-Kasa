@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import LeftArrow from '../../assets/left-arrow.png'
 import RightArrow from '../../assets/right-arrow.png'
 
@@ -10,26 +10,25 @@ function Slideshow(props) {
   function moveToPreviousPicture() {
     if (currentPictureNumber === 1) {
       setCurrentPictureNumber(numberOfPictures)
-      setTranslateValue((numberOfPictures - 1) * -100)
     } else {
       setCurrentPictureNumber(currentPictureNumber - 1)
-      setTranslateValue((currentPictureNumber - 2) * -100)
     }
   }
 
   function moveToNextPicture() {
     if (currentPictureNumber === numberOfPictures) {
       setCurrentPictureNumber(1)
-      setTranslateValue(0)
     } else {
       setCurrentPictureNumber(currentPictureNumber + 1)
-      setTranslateValue(currentPictureNumber * -100)
     }
   }
 
+  useEffect(() => {
+    setTranslateValue((currentPictureNumber - 1) * -100)
+  }, [currentPictureNumber])
+
   return (
     <div className="slideshow">
-      {/* <img src={props.pictures[2]} alt="logement" /> */}
       {props.pictures.map((picture, index) => (
         <img
           key={`${picture}-${index}`}

@@ -1,46 +1,60 @@
 import { useParams } from 'react-router-dom'
-import { housing } from '../../utils/housing'
 import Slideshow from '../../components/Slideshow'
 import HousingInfo from '../../components/HousingInfo'
 import HostProfile from '../../components/HostProfile'
 import Collapse from '../../components/Collapse'
 import Error from '../Error'
+import { useState, useEffect } from 'react'
 
 function HousingSheet() {
   const { idHousing } = useParams()
-  const currentHousing = housing.find((element) => idHousing === element.id)
+  const [currentHousingData, setCurrentHousingData] = useState({})
 
-  if (!currentHousing) {
+  useEffect(() => {
+    fetch('http://localhost:3000/housing.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const currentHousing = data.find((element) => idHousing === element.id)
+        setCurrentHousingData(currentHousing)
+      })
+      .catch((error) => error)
+  }, [idHousing])
+
+  if (!currentHousingData) {
     return <Error />
   }
 
   return (
     <div className="housing-sheet">
-      <Slideshow pictures={currentHousing.pictures} />
-      <div className="housing-sheet__info">
-        <HousingInfo
-          housingTitle={currentHousing.title}
-          housingLocation={currentHousing.location}
-          housingTags={currentHousing.tags}
-        />
-        <HostProfile
-          hostName={currentHousing.host.name}
-          hostPicture={currentHousing.host.picture}
-          hostRating={currentHousing.rating}
-        />
-      </div>
-      <div className="housing-sheet__details">
-        <Collapse
-          title="Description"
-          content={currentHousing.description}
-          globalClassName="collapse collapse--housing-sheet"
-        />
-        <Collapse
-          title="Équipements"
-          content={currentHousing.equipments}
-          globalClassName="collapse collapse--housing-sheet"
-        />
-      </div>
+      {Object.keys(currentHousingData).length !== 0 && (
+        <div>
+          <Slideshow pictures={currentHousingData.pictures} />
+          <div className="housing-sheet__info">
+            <HousingInfo
+              housingTitle={currentHousingData.title}
+              housingLocation={currentHousingData.location}
+              housingTags={currentHousingData.tags}
+            />
+            <HostProfile
+              hostName={currentHousingData.host.name}
+              hostPicture={currentHousingData.host.picture}
+              hostRating={currentHousingData.rating}
+            />
+          </div>
+          <div className="housing-sheet__details">
+            <Collapse
+              title="Description"
+              content={currentHousingData.description}
+              globalClassName="collapse collapse--housing-sheet"
+            />
+            <Collapse
+              title="Équipements"
+              content={currentHousingData.equipments}
+              globalClassName="collapse collapse--housing-sheet"
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
