@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/P7-OC-Kasa/static/css/main.3468512f.css",
+    "main.js": "/P7-OC-Kasa/static/js/main.d254a861.js",
+    "static/media/kalen-emsley-Bkci_8qcdvQ-unsplash 2.jpg": "/P7-OC-Kasa/static/media/kalen-emsley-Bkci_8qcdvQ-unsplash 2.26bc5f49a63e3e76cbe3.jpg",
+    "static/media/IMG.jpg": "/P7-OC-Kasa/static/media/IMG.facdd914f986476abee6.jpg",
+    "index.html": "/P7-OC-Kasa/index.html",
+    "main.3468512f.css.map": "/P7-OC-Kasa/static/css/main.3468512f.css.map",
+    "main.d254a861.js.map": "/P7-OC-Kasa/static/js/main.d254a861.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3468512f.css",
+    "static/js/main.d254a861.js"
+  ]
+}
