@@ -4,12 +4,12 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 
 function Home() {
-  const [housingData, setHousingData] = useState([])
+  const [housing, setHousing] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/housing.json')
       .then((response) => response.json())
-      .then((data) => setHousingData(data))
+      .then((data) => setHousing(data))
       .catch((error) => error)
   }, [])
 
@@ -19,8 +19,8 @@ function Home() {
         <h1>Chez vous, partout et ailleurs</h1>
       </Banner>
       <div className="home__housing">
-        {housingData.length !== 0 &&
-          housingData.map((housing) => (
+        {housing.length !== 0 &&
+          housing.map((housing) => (
             <HousingCard
               id={housing.id}
               cover={housing.cover}

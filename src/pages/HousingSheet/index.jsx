@@ -27,7 +27,7 @@ function HousingSheet() {
   return (
     <div className="housing-sheet">
       {Object.keys(currentHousingData).length !== 0 && (
-        <div>
+        <>
           <Slideshow pictures={currentHousingData.pictures} />
           <div className="housing-sheet__info">
             <HousingInfo
@@ -53,7 +53,7 @@ function HousingSheet() {
               globalClassName="collapse collapse--housing-sheet"
             />
           </div>
-        </div>
+        </>
       )}
     </div>
   )
