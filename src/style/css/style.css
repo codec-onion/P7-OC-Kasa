@@ -447,7 +447,7 @@ footer img {
 }
 @media screen and (max-width: 767px) {
   .about {
-    margin: 20px;
+    margin: 20px 20px 150px 20px;
   }
 }
 
